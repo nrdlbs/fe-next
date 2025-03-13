@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { CounterStoreProvider } from '@/provider/counterProvider'
+import { QueryProvider } from '@/provider/queryProvider'
 
 import './globals.css'
 
@@ -27,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <CounterStoreProvider>{children}</CounterStoreProvider>
+        <QueryProvider>
+          <CounterStoreProvider>{children}</CounterStoreProvider>
+        </QueryProvider>
       </body>
     </html>
   )
