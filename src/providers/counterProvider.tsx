@@ -20,7 +20,7 @@ export const CounterStoreProvider = ({ children }: CounterStoreProviderProps) =>
     storeRef.current = createCounterStore(initCounterStore())
   }
 
-  return <CounterStoreContext.Provider value={storeRef.current}>{children}</CounterStoreContext.Provider>
+  return <CounterStoreContext value={storeRef.current}>{children}</CounterStoreContext>
 }
 
 export const useCounterStore = <T,>(selector: (store: CounterStore) => T): T => {

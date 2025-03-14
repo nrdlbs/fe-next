@@ -1,5 +1,5 @@
 'use client'
-import { useCounterStore } from '@/provider/counterProvider'
+import { useCounterStore } from '@/providers/counterProvider'
 import Button from './Button'
 
 export const Counter = () => {
